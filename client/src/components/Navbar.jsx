@@ -6,9 +6,11 @@ import logo from '../../images/logo.png';
 
 const Navbar = () => {
     return (
-        <>
-            <h1>Navbar</h1>
-        </>
+        <nav className="w-full flex md:justify-center">
+            <img src={logo}></img>
+            <HiMenuAlt4/>
+            <AiOutlineClose/>
+        </nav>
     )
 }
 
