@@ -38,6 +38,7 @@ export const TransactionProvider = ({ children }) => {
             const accounts = await ethereum.request({method: 'eth_requestAccounts'});
 
             setCurrentAccount(accounts[0]);
+            console.log('Account set!')
         } catch (e) {
             console.log(e);
             throw new Error("No ethereum object!")
@@ -49,7 +50,7 @@ export const TransactionProvider = ({ children }) => {
     }, [])
 
     return (
-        <TransactionContext.Provider value={{ connectWallet }}>
+        <TransactionContext.Provider value={{ connectWallet, currentAccount }}>
             {children}
         </TransactionContext.Provider>
     )
