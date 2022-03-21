@@ -49,7 +49,8 @@ export const TransactionProvider = ({ children }) => {
             console.log(structuredTransactions);
             setTransactions(structuredTransactions);
         } catch (e) {
-
+            console.log(e);
+            throw new Error("No ethereum object found!");
         }
     }
 
